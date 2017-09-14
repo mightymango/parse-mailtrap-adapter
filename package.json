@@ -1,0 +1,32 @@
+{
+    "name": "parse-mailtrap-adapter",
+    "version": "0.0.1",
+    "description": "Send custom emails from parse with SMTP access via MailTrap",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [
+        "mailtrap",
+        "mailtrap.io",
+        "parse",
+        "email",
+        "adapter",
+        "templates",
+        "parse.com"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mightymango/parse-mailtrap-adapter"
+    },
+    "author": "Simon Barrett <simon@mightymango.ltd (https://mightymango.ltd)",
+    "license": "MIT",
+    "dependencies": {
+        "email-templates": "^2.4.1",
+        "jade": "^1.11.0",
+        "less": "^2.7.1",
+        "nodemailer": "^3.1.7",
+        "path": "^0.12.7"
+    }
+}
