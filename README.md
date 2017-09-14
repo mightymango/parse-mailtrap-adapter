@@ -52,12 +52,12 @@ let api = new ParseServer({
 			    //This template is used only for reset password email
 				resetPassword: {
 				    //Path to your template
-					template: __dirname + '/views/email/reset-password',
+					template: __dirname + '/templates/email/reset-password',
 					//Subject for this email
 					subject: 'Reset your password'
 				},
 				verifyEmail: {
-				    template: __dirname + '/views/email/verify-email',
+				    template: __dirname + '/templates/email/verify-email',
 				    subject: 'Verify Email'
 				}
 			}
