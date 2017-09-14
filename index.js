@@ -5,16 +5,16 @@ const EmailTemplate = require('email-templates').EmailTemplate;
 
 let ParseMailtrapAdapter = (adapterOptions) => {
     
-    if (!adapterOptions || !adapterOptions.user || !adapterOptions.password || !adapterOptions.fromAddress ) {
-        throw 'ParseMailtrapAdapter requires user, password and fromAddress';
+    if (!adapterOptions || !adapterOptions.host || !adapterOptions.port || !adapterOptions.user || !adapterOptions.password || !adapterOptions.fromAddress ) {
+        throw 'ParseMailtrapAdapter requires host, port, user, password and fromAddress';
     }
 
     /**
      * Creates trasporter for send emails with MailTrap
      */
      let transporter = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
+        host: adapterOptions.host,
+        port: adapterOptions.port,
         auth: {
             user: adapterOptions.user,
             pass: adapterOptions.password
