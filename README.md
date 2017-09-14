@@ -41,6 +41,8 @@ let api = new ParseServer({
 	emailAdapter: {
 		module: "parse-mailtrap-adapter",
 		options: {
+			host: 'smtp.mailtrap.io',
+			port: 2525,
 			fromAddress: 'your@sender.address',
 			user: 'Your mailtrap username',
 			password: 'Your mailtrap password', 
