@@ -1,6 +1,6 @@
 {
     "name": "parse-mailtrap-adapter",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Send custom emails from parse with SMTP access via MailTrap",
     "main": "index.js",
     "scripts": {
