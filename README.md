@@ -48,14 +48,19 @@ let api = new ParseServer({
 			//email field, then in username field, if you have the user email in another field
 			//You can specify here
 			//emailField: 'username', 
-			// Verification email subject
-			      verificationSubject: 'Please verify your e-mail for *|appname|*',
-			      // Verification email body. This will be ignored when verificationTemplateName is used.
-			      verificationBody: 'Hi *|username|*,\n\nYou are being asked to confirm the e-mail address *|email|* with *|appname|*\n\nClick here to confirm it:\n*|link|*',
-			// Password reset email subject
-			      passwordResetSubject: 'Password Reset Request for *|appname|*',
-			      // Password reset email body. This will be ignored when passwordResetTemplateName is used.
-			      passwordResetBody: 'Hi *|username|*,\n\nYou requested a password reset for *|appname|*.\n\nClick here to reset it:\n*|link|*',
+			templates: {
+			    //This template is used only for reset password email
+				resetPassword: {
+				    //Path to your template
+					template: __dirname + '/views/email/reset-password',
+					//Subject for this email
+					subject: 'Reset your password'
+				},
+				verifyEmail: {
+				    template: __dirname + '/views/email/verify-email',
+				    subject: 'Verify Email'
+				}
+			}
 		}
 	}
 });
