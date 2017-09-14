@@ -26,6 +26,7 @@
         "email-templates": "^2.4.1",
         "jade": "^1.11.0",
         "less": "^2.7.1",
+        "handlebars" : "^4.0.0",
         "nodemailer": "^3.1.7",
         "path": "^0.12.7"
     }
