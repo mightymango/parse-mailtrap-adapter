@@ -3,8 +3,6 @@ const path = require('path');
 const nodemailer = require("nodemailer");
 const EmailTemplate = require('email-templates').EmailTemplate;
 
-require('handlebars');
-
 let ParseMailtrapAdapter = (adapterOptions) => {
     
     if (!adapterOptions || !adapterOptions.user || !adapterOptions.password || !adapterOptions.fromAddress ) {
