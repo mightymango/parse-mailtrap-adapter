@@ -82,5 +82,12 @@ The path you pass to the email adapter must be a directory and not a file, this 
 - #{link} //This is the link for reset the password
 - #{user} //This is a Parse object with the current user, so you can use any field in your User class of parse for example the user name `#{user.get('username')}`
 
+## Example Template
+
+```html
+<p>Hi #{user.get('firstname')},</p>
+<p>You requested a password reset for #{appName}.</p>
+<p>Click here to reset it:<br><a href="#{link}">#{link}</a></p>
+```
 
 ### License MIT
