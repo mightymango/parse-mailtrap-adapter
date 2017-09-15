@@ -1,6 +1,8 @@
 # Parse Mailtrap Adapter
 
-With this adapter you can send email for reset password and email verification in parse with SMTP access and custom templates, I am doing methods for support email verification, and templates for reset password pages :)
+With this adapter you can test emails sent for reset password and email verification in Parse with MailTrap.
+
+It is based on [simple-parse-smtp-adapter](https://github.com/lcortess/simple-parse-smtp-adapter) by [Jose Luis](https://github.com/lcortess).
 
 ### Installation
 
@@ -12,7 +14,7 @@ $ npm install --save parse-mailtrap-adapter
 
 ### Use
 
-In the configuration of your parse server you must pass `parse-mailtrap-adapter` as email adapter and set your SMTP access for send emails also the path to your jade template and its less file.
+In the configuration of your parse server you must pass `parse-mailtrap-adapter` as email adapter and set your MailTrap access and also the path to your jade template and its less file.
 
 This is an example using parse server as express module:
 
@@ -44,10 +46,6 @@ let api = new ParseServer({
 			fromAddress: 'your@sender.address',
 			user: 'Your mailtrap username',
 			password: 'Your mailtrap password', 
-			//Somtimes the user email is not in the 'email' field, the email is search first in
-			//email field, then in username field, if you have the user email in another field
-			//You can specify here
-			//emailField: 'username', 
 			templates: {
 			    //This template is used only for reset password email
 				resetPassword: {
@@ -76,15 +74,11 @@ app.listen(APP_PORT, function () {
 ```
 
 ### Template
-The path you pass to the email adapter must be a directory and not a file, this path must contain 2 mandatory files `html.jade` and `style.less` you can do your template as you like with the [CSS rules that emails supports](https://www.campaignmonitor.com/css/) in the template you can use 3 variables:
+The path you pass to the email adapter must be a directory and not a file, this path must contain 2 mandatory files `html.jade` and `style.less`. In the template you can use 3 variables:
 
-- appName //This is the name of your parse app
-- link //This is the link for reset the password
-- user //This is a Parse object with the current user, so you can use any field in your User class of parse for example the user name `#{user.get('username')}`
+- #{appName} //This is the name of your parse app
+- #{link} //This is the link for reset the password
+- #{user} //This is a Parse object with the current user, so you can use any field in your User class of parse for example the user name `#{user.get('username')}`
 
-### Contributing
-This module is pull request friendly in the develop branch feel free of send new features or bug fixes.
-
-If you find a bug please open an issue.
 
 ### License MIT
